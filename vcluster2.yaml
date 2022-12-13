@@ -1,0 +1,15 @@
+sync:
+  nodes:
+    enabled: true
+    nodeSelector: true
+    enableScheduler: false
+
+storage:
+  className: tenant2-sc
+
+syncer:
+  extraArgs:
+    - --node-selector=node-role.kubernetes.io/tenant2=tenant2
+
+nodeSelector:
+  node-role.kubernetes.io/tenant2: "tenant2"
